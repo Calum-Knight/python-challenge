@@ -49,12 +49,12 @@ if len(Doane) > len(DeGette) and len(Doane) > len(Stockham):
     print(f'Winner: {Candidates[2]["Candidate"]}')
 
 #print the analysis to the terminal and export a text file with the results.
-with open("PyPol_Output.txt","w") as text_file:
-    print(f'Election Results:\n------------\n Total Votes: {ID_Count}')
-    print(f'Charles Casper Stockham: {format(Stockham_p,".3f")}\% ({len(Stockham)}) \n Diana DeGette: {format(DeGette_p,".3f")}\% ({len(DeGette)}) \n Raymon Anthony Doane:  {format(Doane_p,".3f")}\% ({len(Doane)})')
+with open("PyPoll_Output.txt","w") as text_file:
+    text_file.write(f'Election Results:\n------------\nTotal Votes: {ID_Count}')
+    text_file.write(f'\nCharles Casper Stockham: {format(Stockham_p,".3f")}% ({len(Stockham)}) \nDiana DeGette: {format(DeGette_p,".3f")}% ({len(DeGette)}) \nRaymon Anthony Doane:  {format(Doane_p,".3f")}% ({len(Doane)})')
     if len(Stockham) > len(DeGette) and len(Stockham) > len(Doane):
-        print(f'Winner: {Candidates[0]["Candidate"]}')
+        text_file.write(f'\nWinner: {Candidates[0]["Candidate"]}')
     if len(DeGette) > len(Stockham) and len(DeGette) > len(Doane):
-        print(f'Winner: {Candidates[1]["Candidate"]}')
+        text_file.write(f'\nWinner: {Candidates[1]["Candidate"]}')
     if len(Doane) > len(DeGette) and len(Doane) > len(Stockham):
-        print(f'Winner: {Candidates[2]["Candidate"]}')
+        text_file.write(f'\nWinner: {Candidates[2]["Candidate"]}')
